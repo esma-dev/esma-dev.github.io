@@ -1,0 +1,43 @@
+body {
+	font-family: 'Open Sans';
+	margin: 50px;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#projectTitle {
+	color: #56ab2f;
+	margin-bottom: 8%; 
+	margin-right: 60%;
+	display: inline-block;
+}
+
+#solution {
+	margin-left: 0;
+	width: 100%;
+}
+
+.btn-default:hover {
+	background-color: #56ab2f;
+	color: white;
+	border: none;
+}
+
+li a:hover {
+ border-bottom: 3px solid #56ab2f;
+}
+
+.nav-colored {
+	color: white;
+	background: #56ab2f;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.nav-transparent {
+	background-color: transparent;
+	color: black;
+}
