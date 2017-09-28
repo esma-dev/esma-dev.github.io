@@ -64,3 +64,8 @@ li a:hover {
 	background-color: transparent;
 	color: black;
 }
+
+#mostRecentCourse {
+	margin-top: 5%;
+	margin-left: 3%;
+}
