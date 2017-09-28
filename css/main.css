@@ -1,0 +1,66 @@
+body {
+	font-family: 'Open Sans';
+}
+
+img[src*="asmaa"]{
+	width: 80%;
+	border-radius: 50%;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#navbar {
+	float: right;
+	margin: 20px;
+	font-weight: 700;
+	font-size: 40px;
+	width: 100%;
+}
+
+.section {
+	margin-top: 10%;
+}
+
+#greeting {
+	font-size: 50px;
+	font-weight: 700;
+}
+
+div[id="about"] {
+	font-size: 15px;
+	margin-top: 60px;
+	padding-bottom: 50px;
+	width: 100%;
+	background: #56ab2f;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+li a:hover {
+ border-bottom: 3px solid #56ab2f;
+}
+
+#links {
+	margin-top: 40px;
+	font-size: 25px;
+	display: inline-block;
+}
+
+.social {
+	color: #333;
+}
+
+.nav-colored {
+	color: white;
+	background: #56ab2f;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.nav-transparent {
+	background-color: transparent;
+	color: black;
+}
