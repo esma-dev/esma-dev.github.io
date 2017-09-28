@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>To-Do List</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="./assets/css/todo.css">
+		<script type="text/javascript" src="./paper-full.js"></script>
+		<script type="text/javascript" src="./howler.js"></script>
+		<script type="text/javascript" src="./assets/js/lib/jquery-3.2.1.min.js"></script>
+		<script type="text/paperscript" canvas="myCanvas">
+			
+			var volumeOn = true;
+
+			var tone = new Howl({
+				volume: 0.5,
+				src: ['./pinwheel.mp3']
+			})
+
+			var circles = [];
+
+			function onKeyDown(event) {
+				var maxPoint = new Point(view.size.width, view.size.height);
+				var randomPoint = Point.random(); //return a number between [0, 1)
+				var point = maxPoint * randomPoint;
+				
+				var circle = new Path.Circle(point, 500);
+				circle.fillColor = "LIGHTYELLOW";
+				// event.key.sound.play();
+				// circle.fillColor = keyData[event.key].color;
+				// keyData[event.key].sound.play();
+
+				if(volumeOn) { 
+					tone.play();
+				}
+				circles.push(circle);
+			};
+
+			function onFrame(event) {
+				for(var i = 0; i < circles.length; i++){
+					circles[i].fillColor.hue += 1;
+					circles[i].scale(.9);
+				};
+			};
+
+			//control volume
+
+			var volButton = document.querySelector("#volume");
+			volButton.addEventListener("click", function () {
+				if(this.getAttribute("class") === "fa fa-volume-up fa-3x") {
+					volumeOn = false;
+					this.setAttribute("class", "fa fa-volume-off fa-3x");
+				} else if (this.getAttribute("class") === "fa fa-volume-off fa-3x") {
+					volumeOn = true;
+					this.setAttribute("class", "fa fa-volume-up fa-3x");
+				}
+			});
+
+		</script>
+	</head>
+	<body>
+		<canvas id="myCanvas" resize></canvas>
+		<div><i class="fa fa-volume-up fa-3x" id="volume"></i></div>
+			<div id="container">
+				<h1>To-Do List <i class="fa fa-plus" aria-hidden="true" id="addTask"></i></h1>
+				<input type="text" placeholder="Type and press Enter to add a new to do">
+				<ul>
+					<li><span class="delete"><i class="fa fa-trash" aria-hidden="true"></i> </span>Buy robes</li>
+					<li><span class="delete"><i class="fa fa-trash" aria-hidden="true"></i> </span>Go to Hogwarts</li>
+					<li><span class="delete"><i class="fa fa-trash" aria-hidden="true"></i> </span>Buy potions</li>
+					<li><span class="delete"><i class="fa fa-trash" aria-hidden="true"></i> </span>Hang out with other wizards</li>
+				</ul>
+			</div>
+
+		<script type="text/javascript" src="./assets/js/todo.js"></script>
+	</body>
+</html>
